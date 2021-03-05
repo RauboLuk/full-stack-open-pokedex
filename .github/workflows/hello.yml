@@ -1,0 +1,26 @@
+name: Hello World!
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  hello_world_job:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Say hello
+        run: |
+          echo "Hello World!"
+      - name: Now it is
+        run: |
+          date -R
+      - name: Directory content
+        run: |
+          ls -l
+          
