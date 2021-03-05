@@ -1,4 +1,4 @@
-name: Hello WorlD1
+name: Hello World!
 
 on:
   schedule:
@@ -17,3 +17,10 @@ jobs:
       - name: Say hello
         run: |
           echo "Hello World!"
+      - name: Now it is
+        run: |
+          date -R
+      - name: Directory content
+        run: |
+          ls -l
+          
