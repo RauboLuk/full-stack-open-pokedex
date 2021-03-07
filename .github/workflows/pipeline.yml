@@ -38,6 +38,10 @@ jobs:
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           healthcheck: ${{secrets.HEALTHCHECK}}
-          checkstring: "ok"
+          checkstring: 'ok'
           rollbackonhealthcheckfailed: true
-          
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.33.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: 'patch'
